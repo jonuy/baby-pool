@@ -1,0 +1,38 @@
+extend layout
+block content
+  #name-input
+    label First Name
+      input(type="text", name="first_name")
+    label Last Name
+      input(type="text", name="last_name")
+
+    // Button should un-hide the #survey section and scroll down to it.
+    button Get Started
+    a(href="/results")
+      | Skip to the results
+
+  // Survey section will initially be hidden from view.
+  #survey
+    form(action="/form-submit", method="post")
+      h2 Birthdate
+        label Pick the Day!
+          input(type="text", placeholder="MM/DD/YYYY")
+        label Time of Day (as a tiebreaker)
+          input(type="text", placeholder="12:00 AM")
+
+      h2 Weight
+        label Pounds
+          input(type="number")
+        label Ounces
+          input(type="number")
+
+      h2 Height
+        label Inches
+          input(type="number")
+
+      h2 Hair or No Hair
+        select(name="hair")
+          option(value="yes") Hair
+          option(value="no") No Hair
+
+      button(type=submit) Submit
