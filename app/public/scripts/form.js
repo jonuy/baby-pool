@@ -1,3 +1,9 @@
+window.onload = function() {
+  // Initially keep the survey section hidden
+  $('#survey').hide();
+}
+
 function startSurvey() {
-  console.log('start survey');
+  // Show the survey section
+  $('#survey').show();
 };
