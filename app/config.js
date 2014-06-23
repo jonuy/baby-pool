@@ -3,6 +3,9 @@ module.exports = function(app, express) {
     // Set the port. Heroku will automatically set the PORT environment variable. 
     app.set('port', process.env.PORT || 5000);
 
+    // Parses request body and populates request.body
+    app.use(express.bodyParser());
+    
     // Perform route lookup based on url and HTTP method.
     app.use(app.router);
 

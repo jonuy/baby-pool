@@ -1,38 +1,45 @@
 extend layout
+block scripts
+  script(type="text/javascript", src="/scripts/form.js")
+
 block content
-  #name-input
-    label First Name
-      input(type="text", name="first_name")
-    label Last Name
-      input(type="text", name="last_name")
+  #intro
+    p
+      | Heyo. This is some intro text.
 
     // Button should un-hide the #survey section and scroll down to it.
-    button Get Started
+    button(onclick="startSurvey();") Get Started
     a(href="/results")
       | Skip to the results
 
   // Survey section will initially be hidden from view.
   #survey
     form(action="/form-submit", method="post")
+      h2 Who Are You?
+        label First Name
+          input(type="text", name="first_name", required="true")
+        label Last Name
+          input(type="text", name="last_name", required="true")
+      // @TODO make configurable the sections that are displayed
       h2 Birthdate
         label Pick the Day!
-          input(type="text", placeholder="MM/DD/YYYY")
+          input(type="text", name="birthdate", placeholder="MM/DD/YYYY", required="true")
         label Time of Day (as a tiebreaker)
-          input(type="text", placeholder="12:00 AM")
+          input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
 
       h2 Weight
         label Pounds
-          input(type="number")
+          input(type="number", name="weight_lbs", required="true")
         label Ounces
-          input(type="number")
+          input(type="number", name="weight_oz", required="true")
 
       h2 Height
         label Inches
-          input(type="number")
+          input(type="number", name="height_inches", required="true")
 
       h2 Hair or No Hair
-        select(name="hair")
-          option(value="yes") Hair
-          option(value="no") No Hair
+        select(name="hair", required="true")
+          option(value="true") Hair
+          option(value="false") No Hair
 
       button(type=submit) Submit

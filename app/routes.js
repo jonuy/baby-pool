@@ -4,6 +4,9 @@ module.exports = function(app) {
     response.render('form', {title:'Baby Pool'});
   });
 
+  // Results view
+  require('./results.js')(app);
+
   // Handle the survey form submission
   require('./submit.js')(app);
 };
