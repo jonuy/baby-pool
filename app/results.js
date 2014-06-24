@@ -28,6 +28,7 @@ module.exports = function(app) {
         birthdates[birthdatesIndex].name = name;
         birthdates[birthdatesIndex].date = val.birthdate.toLocaleDateString();
         birthdates[birthdatesIndex].time = val.birthdate.toLocaleTimeString();
+        birthdates[birthdatesIndex].dateObj = val.birthdate;
 
         // Height results
         var heightsIndex = heights.length;
@@ -40,6 +41,7 @@ module.exports = function(app) {
         weights[weightsIndex] = {};
         weights[weightsIndex].name = name;
         weights[weightsIndex].weight = val.weight_lbs + ' lbs ' + val.weight_oz + ' oz';
+        weights[weightsIndex].totalWeightInOz = (val.weight_lbs * 16) + val.weight_oz;
 
         // Hair results
         var hairsIndex = hairs.length;
@@ -48,11 +50,46 @@ module.exports = function(app) {
         hairs[hairsIndex].hair = val.hair ? 'YES' : 'NO';
       });
 
-      // @TODO sort birthdates by date and time
-      // @TODO sort heights in ascending order
-      // @TODO sort weights in ascending order
-      // @TODO sort hair options to YES and NO
-      
+      // Sort birthdates by date and time. If equal, sort by name.
+      birthdates.sort(function(a, b) {
+        if (a.dateObj.getTime() === b.dateObj.getTime()) {
+          return a.name.toLowerCase() > b.name.toLowerCase();
+        }
+        else {
+          return a.dateObj.getTime() - b.dateObj.getTime();
+        }
+      });
+
+      // Sort heights in ascending order. If equal, sort by name.
+      heights.sort(function(a, b) {
+        if (a.height == b.height) {
+          return a.name.toLowerCase() > b.name.toLowerCase();
+        }
+        else {
+          return a.height - b.height;
+        }
+      });
+
+      // Sort weights in ascending order. If equal, sort by name.
+      weights.sort(function(a, b) {
+        if (a.totalWeightInOz == b.totalWeightInOz) {
+          return a.name.toLowerCase() > b.name.toLowerCase();
+        }
+        else {
+          return a.totalWeightInOz - b.totalWeightInOz;
+        }
+      });
+
+      // Sort hair selection between YES and NO. Sort by name within the groupings.
+      hairs.sort(function(a, b) {
+        if (a.hair === 'YES' && b.hair === 'NO')
+          return -1;
+        else if (a.hair === 'NO' && b.hair === 'YES')
+          return 1;
+        else
+          return a.name.toLowerCase() > b.name.toLowerCase();
+      });
+
       // Prepare object to pass to the view to parse
       var results = {
         birthdates: birthdates,
