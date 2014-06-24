@@ -84,6 +84,7 @@ input {
   font-size: 1em;
   margin: 0.5em 0;
   padding: 0.5em 1em;
+  width: 100%;
 }
 
 label {
@@ -101,14 +102,21 @@ p {
   text-align: center;
 }
 
+.container {
+  width: 100%;
+}
+
 .intro-teaser {
-  font-size: 1.15em;
+  font-size: 1.5em;
 }
 
 .intro-content {
   color: black;
+  font-size: 1.15em;
 }
 
 .main-content {
-  padding: 1em;
+  margin: 0 auto;
+  min-width: 320px;
+  width: 50%;
 }
