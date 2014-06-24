@@ -1,3 +1,25 @@
 extend layout
 block content
-  | This is the results page.
+  h2 Birthdate
+  - for (var i = 0; i < birthdates.length; i++) {
+    div
+      | #{birthdates[i].name} - #{birthdates[i].date} - #{birthdates[i].time}
+  - }
+
+  h2 Height
+  - for (var i = 0; i < heights.length; i++) {
+    div
+      | #{heights[i].name} - #{heights[i].height}
+  - }
+
+  h2 Weight
+  - for (var i = 0; i < weights.length; i++) {
+    div
+      | #{weights[i].name} - #{weights[i].weight}
+  - }
+
+  h2 Hair
+  - for (var i = 0; i < hairs.length; i++) {
+    div
+      | #{hairs[i].name} - #{hairs[i].hair}
+  - }
