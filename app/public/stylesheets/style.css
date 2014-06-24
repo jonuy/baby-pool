@@ -46,3 +46,69 @@ table {
   border-spacing: 0;
 }
 /******* End CSS Reset *******/
+
+/**
+ * Colors:
+ *  Primary background color: rgb(90, 195, 200)
+ *  Primary font color: rgb(255, 255, 255)
+ *  Secondary font color: rgb(0, 0, 0)
+ *  Light blue: rgb(180, 230, 240)
+ *  Light red: rgb(235, 195, 120)
+ */
+
+body {
+  font-family: 'Lato';
+  background: rgb(90, 195, 200);
+  color: white;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 1em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+}
+
+h3 {
+  font-size: 1.15em;
+  margin: 0.5em 0;
+}
+
+input {
+  border: 0px;
+  border-radius: 5px;
+  font-family: 'Lato';
+  font-size: 1em;
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+}
+
+label {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+p {
+  margin: 1em 0;
+}
+
+#intro {
+  margin: 4em 0;
+  text-align: center;
+}
+
+.intro-teaser {
+  font-size: 1.15em;
+}
+
+.intro-content {
+  color: black;
+}
+
+.main-content {
+  padding: 1em;
+}

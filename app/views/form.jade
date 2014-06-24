@@ -4,42 +4,61 @@ block scripts
 
 block content
   #intro
-    p
-      | Heyo. This is some intro text.
+    p.intro-teaser
+      | So you think you know when my baby's being born.
+    p.intro-content
+      | I don't know how you know, because I have no idea. Join other people who
+      | also claim to know the details of my child's birth. Win some bragging
+      | rights - maybe even a chance to change a diaper or two.
 
     // Button should un-hide the #survey section and scroll down to it.
-    button(onclick="startSurvey();") Get Started
+    div
+      button(onclick="startSurvey();") Get Started
+
     a(href="/results")
       | Skip to the results
 
   // Survey section will initially be hidden from view.
-  #survey
+  #survey(style="display:none;")
+    p.
+      * All fields are required.
     form(action="/form-submit", method="post")
       h2 Who Are You?
-        label First Name
-          input(type="text", name="first_name", required="true")
-        label Last Name
-          input(type="text", name="last_name", required="true")
+      div
+        label(for="first_name") First Name
+        input(type="text", name="first_name", required="true")
+      div
+        label(for="last_name") Last Name
+        input(type="text", name="last_name", required="true")
+
       // @TODO make configurable the sections that are displayed
       h2 Birthdate
-        label Pick the Day!
-          input(type="text", name="birthdate", placeholder="MM/DD/YYYY", required="true")
-        label Time of Day (as a tiebreaker)
-          input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
+      div
+        label(for="birthdate") Pick the Day!
+        input(type="text", name="birthdate", placeholder="MM/DD/YYYY", required="true")
+      div
+        label(for="birthdate_time") Time of Day (as a tiebreaker)
+        input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
 
       h2 Weight
-        label Pounds
-          input(type="number", name="weight_lbs", required="true")
-        label Ounces
-          input(type="number", name="weight_oz", required="true")
+      div
+        label(for="weight_lbs") Pounds
+        input(type="number", name="weight_lbs", required="true")
+      div
+        label(for="weight_oz") Ounces
+        input(type="number", name="weight_oz", required="true")
 
       h2 Height
-        label Inches
-          input(type="number", name="height_inches", required="true")
+      div
+        label(for="height_inches") Inches
+        input(type="number", name="height_inches", required="true")
 
       h2 Hair or No Hair
+      div
+        label(for="hair") Is the baby going to have a head of hair?
         select(name="hair", required="true")
-          option(value="true") Hair
-          option(value="false") No Hair
+          option(value="true") Yes
+          option(value="false") No
 
-      button(type=submit) Submit
+      div
+        button(type=submit) Submit
