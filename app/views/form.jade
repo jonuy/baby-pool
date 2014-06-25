@@ -13,7 +13,7 @@ block content
 
     // Button should un-hide the #survey section and scroll down to it.
     div
-      button(onclick="startSurvey();") Get Started
+      input.button(onclick="startSurvey();" value="Get Started")
 
     a(href="/results")
       | Skip to the results
@@ -61,4 +61,4 @@ block content
           option(value="false") No
 
       div
-        button(type=submit) Submit
+        input.button(type="submit" value="Submit")
