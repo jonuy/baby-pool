@@ -20,16 +20,27 @@ block intro
 block content
   // Survey section will initially be hidden from view.
   #survey
-    p.intro-content
-      | Kristina's info: as;ldkfjaslk;dfj
-    p.intro-content
-      | Jon's: aksdjflksjf lskjfslkj
-      | asldfjsklfjsdk flksjdflksdjf
-    p.intro-content
-      | lorem ipsum dolor sit amet
-      | lorem ip
-    p.
-      * All fields are required.
+    div.intro-content.more-info
+      p
+        | Some more details on the baby and the parents because maybe it matters - most likely doesn't.
+      h3
+        | Baby Whale's due date:
+      p
+        | 6/23/2014
+      h3
+        | Mother's info:
+      p
+        | Born:<br>
+        | Weight:<br>
+        | Height:<br>
+      h3
+        | Father's info:
+      p
+        | Born: 2 days before due date<br>
+        | Weight: 7 lbs 11 oz<br>
+        | Height: 19.5 in<br>
+    p
+      | * All fields are required.
     form(action="/form-submit", method="post")
       h2 Who Are You?
       div
@@ -59,7 +70,7 @@ block content
       h2 Height
       div
         label(for="height_inches") Inches
-        input(type="number", name="height_inches", required="true")
+        input(type="number", step="0.25", name="height_inches", required="true")
 
       h2 Hair or No Hair
       div(style="text-align:center;")

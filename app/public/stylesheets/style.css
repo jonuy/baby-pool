@@ -58,8 +58,8 @@ table {
 
 body {
   font-family: 'Lato';
-  background: rgb(90, 195, 200);
-  color: white;
+  background: url(../images/bg-stripe.png);
+  color: black;
 }
 
 h1 {
@@ -112,12 +112,12 @@ select {
 }
 
 #bottom-container {
-  background: url(../images/bg-stripe.png);
-  color: black;
   padding: 2em 0;
 }
 
 #top-container {
+  background: rgb(90, 195, 200);
+  color: white;
   padding: 4em 0;
 }
 
@@ -152,4 +152,8 @@ select {
   margin: 0 auto;
   min-width: 320px;
   width: 60%;
+}
+
+.more-info {
+  text-align: center;
 }

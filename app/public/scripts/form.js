@@ -1,7 +1,4 @@
 window.onload = function() {
-  // Initially keep the survey section hidden
-  $('#bottom-container').hide();
-
   // Function to scroll to the survey view when shown
   $.fn.scrollView = function() {
     return this.each(function() {
@@ -13,8 +10,7 @@ window.onload = function() {
 }
 
 function startSurvey() {
-  // Show the survey section
-  $('#bottom-container').show();
+  // Scroll to the start of the survey
   $('#bottom-container').scrollView();
 };
 
