@@ -2,14 +2,13 @@ extend layout
 block scripts
   script(type="text/javascript", src="/scripts/form.js")
 
-block content
+block intro
   #intro
     p.intro-teaser
-      | So you think you know when my baby's being born.
+      | So you think you know when our baby's being born.
     p.intro-content
-      | I don't know how you know, because I have no idea. Join other people who
-      | also claim to know the details of my child's birth. Win some bragging
-      | rights - maybe even a chance to change a diaper or two.
+      | Join other people who also claim to know the details of our child's birth.
+      | Win some bragging rights - maybe even a chance to change a diaper or two.
 
     // Button should un-hide the #survey section and scroll down to it.
     div
@@ -18,8 +17,17 @@ block content
     a(href="/results")
       | Skip to the results
 
+block content
   // Survey section will initially be hidden from view.
-  #survey(style="display:none;")
+  #survey
+    p.intro-content
+      | Kristina's info: as;ldkfjaslk;dfj
+    p.intro-content
+      | Jon's: aksdjflksjf lskjfslkj
+      | asldfjsklfjsdk flksjdflksdjf
+    p.intro-content
+      | lorem ipsum dolor sit amet
+      | lorem ip
     p.
       * All fields are required.
     form(action="/form-submit", method="post")
@@ -35,7 +43,7 @@ block content
       h2 Birthdate
       div
         label(for="birthdate") Pick the Day!
-        input(type="text", name="birthdate", placeholder="MM/DD/YYYY", required="true")
+        input(type="text", name="birthdate", placeholder="MM/DD", required="true")
       div
         label(for="birthdate_time") Time of Day (as a tiebreaker)
         input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
@@ -54,11 +62,11 @@ block content
         input(type="number", name="height_inches", required="true")
 
       h2 Hair or No Hair
-      div
-        label(for="hair") Is the baby going to have a head of hair?
+      div(style="text-align:center;")
+        label(for="hair") Is the baby going to have a full head of hair?
         select(name="hair", required="true")
-          option(value="true") Yes
-          option(value="false") No
+          option(value="true") Yup!
+          option(value="false") Nope
 
       div
         input.button(type="submit" value="Submit")

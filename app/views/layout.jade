@@ -11,6 +11,9 @@ html
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     block scripts
   body
-    .container
-      .main-content
+    #top-container.container
+      .inner-container
+        block intro
+    #bottom-container.container
+      .inner-container
         block content

@@ -78,7 +78,7 @@ h3 {
 }
 
 input {
-  border: 0px;
+  border: 1px solid black;
   border-radius: 5px;
   box-sizing: border-box;
   font-family: 'Lato';
@@ -88,6 +88,10 @@ input {
   width: 100%;
 }
 
+input.button {
+  border: 0;
+}
+
 label {
   clear: both;
   float: left;
@@ -95,11 +99,29 @@ label {
 }
 
 p {
+  line-height: normal;
   margin: 1em 0;
 }
 
+select {
+  border: 0;
+  background: white;
+  font-family: 'Lato';
+  font-size: 1.15em;
+  margin: 1em;
+}
+
+#bottom-container {
+  background: url(../images/bg-stripe.png);
+  color: black;
+  padding: 2em 0;
+}
+
+#top-container {
+  padding: 4em 0;
+}
+
 #intro {
-  margin: 4em 0;
   text-align: center;
 }
 
@@ -126,8 +148,8 @@ p {
   font-size: 1.15em;
 }
 
-.main-content {
+.inner-container {
   margin: 0 auto;
   min-width: 320px;
-  width: 50%;
+  width: 60%;
 }
