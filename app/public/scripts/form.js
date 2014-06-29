@@ -11,6 +11,6 @@ window.onload = function() {
 
 function startSurvey() {
   // Scroll to the start of the survey
-  $('#bottom-container').scrollView();
+  $('#survey').scrollView();
 };
 

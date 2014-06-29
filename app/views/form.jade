@@ -18,68 +18,66 @@ block intro
       | Skip to the results
 
 block content
-  // Survey section will initially be hidden from view.
-  #survey
-    div.intro-content.center-contents
-      p
-        | Some more details on the baby and the parents because maybe it matters - most likely doesn't.
-      h3
-        | Baby Whale's due date:
-      p
-        | 6/23/2014
-      h3
-        | Mother's info:
-      p
-        | Born: 2 days after due date<br>
-        | Weight: 5 lbs 11 oz<br>
-        | Height: 21 in<br>
-        | Hair: Yes
-      h3
-        | Father's info:
-      p
-        | Born: 2 days before due date<br>
-        | Weight: 7 lbs 11 oz<br>
-        | Height: 19.5 in<br>
-        | Hair: Yes
+  div.intro-content.center-contents
     p
-      | * All fields are required.
-    form(action="/form-submit", method="post")
-      h2 Who Are You?
-      div
-        label(for="first_name") First Name
-        input(type="text", name="first_name", required="true")
-      div
-        label(for="last_name") Last Name
-        input(type="text", name="last_name", required="true")
+      | Some more details on the baby and the parents because maybe it matters - most likely doesn't.
+    h3
+      | Baby Whale's due date:
+    p
+      | 6/23/2014
+    h3
+      | Mother's info:
+    p
+      | Born: 2 days after due date<br>
+      | Weight: 5 lbs 11 oz<br>
+      | Height: 21 in<br>
+      | Hair: Yes
+    h3
+      | Father's info:
+    p
+      | Born: 2 days before due date<br>
+      | Weight: 7 lbs 11 oz<br>
+      | Height: 19.5 in<br>
+      | Hair: Yes
+  p
+    | * All fields are required.
+  form(action="/form-submit", method="post")#survey
+    h2 Who Are You?
+    div
+      label(for="first_name") First Name
+      input(type="text", name="first_name", required="true")
+    div
+      label(for="last_name") Last Name
+      input(type="text", name="last_name", required="true")
 
-      // @TODO make configurable the sections that are displayed
-      h2 Birthdate
-      div
-        label(for="birthdate") Pick the Day!
-        input(type="text", name="birthdate", placeholder="MM/DD", required="true")
-      div
-        label(for="birthdate_time") Time of Day (as a tiebreaker)
-        input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
+    // @TODO make configurable the sections that are displayed
+    h2 Birthdate
+    div
+      label(for="birthdate") Pick the Day!
+      input(type="text", name="birthdate", placeholder="MM/DD", required="true")
+    div
+      label(for="birthdate_time") Time of Day (as a tiebreaker)
+      input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
 
-      h2 Weight
-      div
-        label(for="weight_lbs") Pounds
-        input(type="number", name="weight_lbs", required="true")
-      div
-        label(for="weight_oz") Ounces
-        input(type="number", name="weight_oz", required="true")
+    h2 Weight
+    div
+      label(for="weight_lbs") Pounds
+      input(type="number", name="weight_lbs", required="true")
+    div
+      label(for="weight_oz") Ounces
+      input(type="number", name="weight_oz", required="true")
 
-      h2 Height
-      div
-        label(for="height_inches") Inches
-        input(type="number", step="0.25", name="height_inches", required="true")
+    h2 Height
+    div
+      label(for="height_inches") Inches
+      input(type="number", step="0.25", name="height_inches", required="true")
 
-      h2 Hair or No Hair
-      div(style="text-align:center;")
-        label(for="hair") Is the baby going to have a full head of hair?
-        select(name="hair", required="true")
-          option(value="true") Yup!
-          option(value="false") Nope
+    h2 Hair or No Hair
+    div(style="text-align:center;")
+      label(for="hair") Is the baby going to have a full head of hair?
+      select(name="hair", required="true")
+        option(value="true") Yup!
+        option(value="false") Nope
 
-      div.center-contents
-        input.button(type="submit" value="Submit")
+    div.center-contents
+      input.button(type="submit" value="Submit")
