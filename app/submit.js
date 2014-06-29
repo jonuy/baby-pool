@@ -1,3 +1,9 @@
+/**
+ * Submits data to the backend.
+ *
+ * Routes:
+ *  POST /form-submit
+ */
 var model = require('./models/submission')
     ;
 
@@ -11,12 +17,16 @@ module.exports = function(app) {
     var doc = {
       first_name: request.body.first_name,
       last_name: request.body.last_name,
-      birthdate: new Date(request.body.birthdate + ' ' + request.body.birthdate_time),
       weight_lbs: request.body.weight_lbs,
       weight_oz: request.body.weight_oz,
       height_inches: request.body.height_inches,
       hair: request.body.hair
     };
+
+    // Set the year on the birthdate and add to the document
+    var birthdate = new Date(request.body.birthdate + ' ' + request.body.birthdate_time);
+    birthdate.setFullYear(2014);
+    doc.birthdate = birthdate;
 
     // Add document to the database
     var submission = model.create(doc);
@@ -39,5 +49,5 @@ module.exports = function(app) {
   /**
    * POST /form-submit
    */
-  app.post('/form-submit', onFormSubmit);    
+  app.post('/form-submit', onFormSubmit);
 };

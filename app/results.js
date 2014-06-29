@@ -1,3 +1,10 @@
+/**
+ * Logic for pulling submission data out of the backend and rendering it to the frontend.
+ *
+ * Routes:
+ *  GET /results
+ */
+
 var model = require('./models/submission')
     ;
 
