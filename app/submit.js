@@ -25,7 +25,10 @@ module.exports = function(app) {
 
     // Set the year on the birthdate and add to the document
     var birthdate = new Date(request.body.birthdate + ' ' + request.body.birthdate_time);
-    birthdate.setFullYear(2014);
+
+    // User another Date object to get the current year
+    var currDate = new Date();
+    birthdate.setFullYear(currDate.getFullYear());
     doc.birthdate = birthdate;
 
     // Add document to the database
