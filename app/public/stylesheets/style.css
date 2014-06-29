@@ -64,16 +64,19 @@ body {
 
 h1 {
   font-size: 2em;
+  font-weight: 600;
   margin: 1em 0;
 }
 
 h2 {
   font-size: 1.5em;
+  font-weight: 600;
   margin: 0.75em 0;
 }
 
 h3 {
   font-size: 1.15em;
+  font-weight: 600;
   margin: 0.5em 0;
 }
 
@@ -86,10 +89,6 @@ input {
   margin: 0.5em 0;
   padding: 0.5em 1em;
   width: 100%;
-}
-
-input.button {
-  border: 0;
 }
 
 label {
@@ -127,12 +126,18 @@ select {
 
 .button {
   background: rgb(180, 230, 240);
+  border: 0;
   color: black;
   cursor: pointer;
   font-size: 1.5em;
   font-weight: 600;
+  max-width: 500px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.center-contents {
+  text-align: center;
 }
 
 .container {
