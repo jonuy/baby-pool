@@ -4,7 +4,7 @@ block scripts
 
 block intro
   #intro
-    p.intro-teaser
+    p.intro-header
       | So you think you know when our baby's being born.
     p.intro-content
       | Join other people who also claim to know the details of our child's birth.
@@ -15,16 +15,16 @@ block intro
       input.button(onclick="startSurvey();" value="Get Started")
 
     a(href="/results")
-      | Skip to the results
+      | See what other people guessed
 
 block content
   div.intro-content.center-contents
     p
-      | Some more details on the baby and the parents because maybe it matters - most likely doesn't.
+      | Some more details on the baby and the parents because maybe it matters - most likely it doesn't.
     h3
       | Baby Whale's due date:
     p
-      | 6/23/2014
+      | 7/23/2014
     h3
       | Mother's info:
     p
@@ -39,9 +39,9 @@ block content
       | Weight: 7 lbs 11 oz<br>
       | Height: 19.5 in<br>
       | Hair: Yes
-  p
-    | * All fields are required.
   form(action="/form-submit", method="post")#survey
+    p
+      | * All fields are required.
     h2 Who Are You?
     div
       label(for="first_name") First Name
@@ -49,6 +49,9 @@ block content
     div
       label(for="last_name") Last Name
       input(type="text", name="last_name", required="true")
+    div
+      label(for="contact") Email or phone (so we can contact you if you win or something)
+      input(type="text", name="contact", required="true")
 
     // @TODO make configurable the sections that are displayed
     h2 Birthdate
@@ -56,7 +59,7 @@ block content
       label(for="birthdate") Pick the Day!
       input(type="text", name="birthdate", placeholder="MM/DD", required="true")
     div
-      label(for="birthdate_time") Time of Day (as a tiebreaker)
+      label(for="birthdate_time") Time of Day
       input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
 
     h2 Weight

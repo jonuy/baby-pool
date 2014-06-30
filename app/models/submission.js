@@ -9,6 +9,7 @@ var db = mongoose.createConnection(uri);
 var schema = new mongoose.Schema({
   first_name: String,
   last_name: String,
+  contact: String,
   birthdate: Date,
   weight_lbs: Number,
   weight_oz: Number,
