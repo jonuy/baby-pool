@@ -1,4 +1,10 @@
 extend layout
+
+block intro
+  p.intro-header
+    | Baby Whale guesses below.
+  p.intro-content
+    | Winner gets to name the baby.
 block content
   h2 Birthdate
   - for (var i = 0; i < birthdates.length; i++) {
@@ -9,7 +15,7 @@ block content
   h2 Height
   - for (var i = 0; i < heights.length; i++) {
     div
-      | #{heights[i].name} - #{heights[i].height}
+      | #{heights[i].name} - #{heights[i].height} in
   - }
 
   h2 Weight

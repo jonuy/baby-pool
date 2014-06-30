@@ -103,7 +103,7 @@ p {
 }
 
 select {
-  border: 0;
+  border: 1px solid black;
   background: white;
   font-family: 'Lato';
   font-size: 1.15em;
@@ -144,7 +144,7 @@ select {
   width: 100%;
 }
 
-.intro-teaser {
+.intro-header {
   font-size: 1.5em;
 }
 
@@ -156,9 +156,5 @@ select {
 .inner-container {
   margin: 0 auto;
   min-width: 320px;
-  width: 60%;
-}
-
-.more-info {
-  text-align: center;
+  width: 55%;
 }

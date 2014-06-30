@@ -10,6 +10,46 @@ var model = require('./models/submission')
 
 module.exports = function(app) {
 
+  /**
+   * Helper function to return the date string to display.
+   *
+   * @param date
+   *   Date object.
+   */
+  var getDateString = function(date) {
+    return date.getMonth() + 1 + "/" + date.getDate();
+  };
+
+  /**
+   * Helper function to return the time string to display.
+   *
+   * @param date
+   *   Date object.
+   */
+  var getTimeString = function(date) {
+    var am_pm = 'AM';
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+
+    if (hours >= 12) {
+      am_pm = 'PM';
+    }
+
+    hours = (hours % 12);
+    if (hours == 0) {
+      hours = 12;
+    }
+
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+
+    return hours + ':' + minutes + ' ' + am_pm;
+  };
+
+  /**
+   * Renders the backend data to the frontend.
+   */
   var render = function(request, response) {
 
     // Retrieve all documents in the collection
@@ -33,8 +73,8 @@ module.exports = function(app) {
         var birthdatesIndex = birthdates.length;
         birthdates[birthdatesIndex] = {};
         birthdates[birthdatesIndex].name = name;
-        birthdates[birthdatesIndex].date = val.birthdate.toLocaleDateString();
-        birthdates[birthdatesIndex].time = val.birthdate.toLocaleTimeString();
+        birthdates[birthdatesIndex].date = getDateString(val.birthdate);
+        birthdates[birthdatesIndex].time = getTimeString(val.birthdate);
         birthdates[birthdatesIndex].dateObj = val.birthdate;
 
         // Height results
@@ -99,6 +139,7 @@ module.exports = function(app) {
 
       // Prepare object to pass to the view to parse
       var results = {
+        title: 'Baby Pool Results',
         birthdates: birthdates,
         weights: weights,
         heights: heights,
