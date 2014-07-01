@@ -61,7 +61,7 @@ module.exports = function(app) {
 
       var birthdates = []
           , weights = []
-          , heights = []
+          , lengths = []
           , hairs = []
           ;
 
@@ -77,11 +77,11 @@ module.exports = function(app) {
         birthdates[birthdatesIndex].time = getTimeString(val.birthdate);
         birthdates[birthdatesIndex].dateObj = val.birthdate;
 
-        // Height results
-        var heightsIndex = heights.length;
-        heights[heightsIndex] = {};
-        heights[heightsIndex].name = name;
-        heights[heightsIndex].height = val.height_inches;
+        // Length results
+        var lengthsIndex = lengths.length;
+        lengths[lengthsIndex] = {};
+        lengths[lengthsIndex].name = name;
+        lengths[lengthsIndex].length = val.length_inches;
 
         // Weight results
         var weightsIndex = weights.length;
@@ -107,13 +107,13 @@ module.exports = function(app) {
         }
       });
 
-      // Sort heights in ascending order. If equal, sort by name.
-      heights.sort(function(a, b) {
-        if (a.height == b.height) {
+      // Sort lengths in ascending order. If equal, sort by name.
+      lengths.sort(function(a, b) {
+        if (a.length == b.length) {
           return a.name.toLowerCase() > b.name.toLowerCase();
         }
         else {
-          return a.height - b.height;
+          return a.length - b.length;
         }
       });
 
@@ -142,7 +142,7 @@ module.exports = function(app) {
         title: 'Baby Pool Results',
         birthdates: birthdates,
         weights: weights,
-        heights: heights,
+        lengths: lengths,
         hairs: hairs
       };
 

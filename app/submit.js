@@ -20,7 +20,7 @@ module.exports = function(app) {
       contact: request.body.contact,
       weight_lbs: request.body.weight_lbs,
       weight_oz: request.body.weight_oz,
-      height_inches: request.body.height_inches,
+      length_inches: request.body.length_inches,
       hair: request.body.hair
     };
 

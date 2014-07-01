@@ -31,14 +31,14 @@ block content
     p
       | Born: 2 days after due date<br>
       | Weight: 5 lbs 11 oz<br>
-      | Height: 21 in<br>
+      | Length: 21 in<br>
       | Hair: Yes
     h3
       | Father's info:
     p
       | Born: 2 days before due date<br>
       | Weight: 7 lbs 11 oz<br>
-      | Height: 19.5 in<br>
+      | Length: 19.5 in<br>
       | Hair: Yes
   form(action="/form-submit", method="post")#survey
     p
@@ -71,10 +71,10 @@ block content
       label(for="weight_oz") Ounces
       input(type="number", name="weight_oz", required="true")
 
-    h2 Height
+    h2 Length
     div
-      label(for="height_inches") Inches
-      input(type="number", step="0.25", name="height_inches", required="true")
+      label(for="length_inches") Inches
+      input(type="number", step="0.01", name="length_inches", required="true")
 
     h2 Hair or No Hair
     div(style="text-align:center;")

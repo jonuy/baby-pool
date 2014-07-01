@@ -13,7 +13,7 @@ var schema = new mongoose.Schema({
   birthdate: Date,
   weight_lbs: Number,
   weight_oz: Number,
-  height_inches: Number,
+  length_inches: Number,
   hair: Boolean,
 });
 
