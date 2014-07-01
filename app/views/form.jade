@@ -59,10 +59,10 @@ block content
     h2 Birthdate
     div
       label(for="birthdate") Pick the Day!
-      input(type="text", name="birthdate", placeholder="MM/DD", required="true")
+      input(type="text", name="birthdate", placeholder="MM/DD", required="true", pattern="^\\d{1,2}[-|\/]\\d{1,2}$")
     div
       label(for="birthdate_time") Time of Day
-      input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true")
+      input(type="text", name="birthdate_time", placeholder="12:00 AM", required="true", pattern="^\\d{1,2}\:\\d{2} (AM|PM|am|pm)$")
 
     h2 Weight
     div
