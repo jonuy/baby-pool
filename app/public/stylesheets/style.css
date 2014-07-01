@@ -62,6 +62,15 @@ body {
   color: black;
 }
 
+button {
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: 'Lato';
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
 h1 {
   font-size: 2em;
   font-weight: 600;

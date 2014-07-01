@@ -13,7 +13,8 @@ block intro
 
     // Button should un-hide the #survey section and scroll down to it.
     div
-      input.button(onclick="startSurvey();" value="Get Started")
+      button.button(onclick="startSurvey();")
+        | Get Started
 
     a(href="/results")
       | See what other people guessed
@@ -51,7 +52,7 @@ block content
       label(for="last_name") Last Name
       input(type="text", name="last_name", required="true")
     div
-      label(for="contact") Email or phone (so we can contact you if you win or something)
+      label(for="contact") Email (so we can contact you if you win or something)
       input(type="text", name="contact", required="true")
 
     // @TODO make configurable the sections that are displayed
