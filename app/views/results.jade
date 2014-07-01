@@ -9,23 +9,39 @@ block content
   h2 Birthdate
   - for (var i = 0; i < birthdates.length; i++) {
     div
-      | #{birthdates[i].name} - #{birthdates[i].date} - #{birthdates[i].time}
+      div.results-left.results-item
+        | #{birthdates[i].name}
+      div.results-right.results-item
+        | #{birthdates[i].date} - #{birthdates[i].time}
   - }
+  div(style="clear:both;")
 
   h2 Height
   - for (var i = 0; i < heights.length; i++) {
     div
-      | #{heights[i].name} - #{heights[i].height} in
+      div.results-left.results-item
+        | #{heights[i].name}
+      div.results-right.results-item
+        | #{heights[i].height} in
   - }
+  div(style="clear:both;")
 
   h2 Weight
   - for (var i = 0; i < weights.length; i++) {
     div
-      | #{weights[i].name} - #{weights[i].weight}
+      div.results-left.results-item
+        | #{weights[i].name}
+      div.results-right.results-item
+        | #{weights[i].weight}
   - }
+  div(style="clear:both;")
 
   h2 Hair
   - for (var i = 0; i < hairs.length; i++) {
     div
-      | #{hairs[i].name} - #{hairs[i].hair}
+      div.results-left.results-item
+        | #{hairs[i].name}
+      div.results-right.results-item
+        | #{hairs[i].hair}
   - }
+  div(style="clear:both;")

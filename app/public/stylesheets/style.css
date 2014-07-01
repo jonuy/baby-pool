@@ -158,3 +158,17 @@ select {
   min-width: 320px;
   width: 55%;
 }
+
+.results-left {
+  float: left;
+  width: 50%;
+}
+
+.results-right {
+  float: right;
+  width: 50%;
+}
+
+.results-item {
+  margin: 0.4em 0;
+}
